@@ -10,10 +10,16 @@ function clear() {
 }
 
 function del() {
-
+    screen.innerText = screen.innerText.slice(0, screen.innerText.length -1);
 }
 
-function appendNumber() {
+function appendNumber(btn) {
+    if (btn.innerText === '.' && screen.innerText.includes('.')) {
+        return
+    } 
+    else {
+        screen.innerText = screen.ineerText + btn.innerText;
+    }
 
 }
 
@@ -30,3 +36,5 @@ function updateDisplay() {
 }
 
 clearButton.addEventListener("click", clear);
+deleteButton.addEventListener("click", del);
+numberButtons.forEach((btn) => {btn.addEventListener("click", appendNumber(btn))});

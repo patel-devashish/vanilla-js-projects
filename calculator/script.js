@@ -1,5 +1,5 @@
 let numberButtons = document.querySelectorAll("[data-number]");
-let operatioButtons = document.querySelectorAll("[data-operation]");
+let operationButtons = document.querySelectorAll("[data-operation]");
 let equalButton = document.querySelector("[data-equals]");
 let deleteButton = document.querySelector("[data-delete]");
 let clearButton = document.querySelector("[data-clear]");
@@ -23,9 +23,24 @@ function appendNumber(btn) {
   };
 }
 
-function chooseOperation() {}
+function chooseOperation(btn) {
+  btn.onclick = function () {
+    if (
+      screen.innerText.includes("+") ||
+      screen.innerText.includes("×") ||
+      screen.innerText.includes("÷") ||
+      screen.innerText.includes("-")
+    ) {
+      return;
+    } else {
+      screen.innerText += btn.innerText;
+    }
+  };
+}
 
-function compute() {}
+function compute() {
+  l_operand = screen.innerText;
+}
 
 function updateDisplay() {}
 
@@ -34,3 +49,7 @@ deleteButton.addEventListener("click", del);
 numberButtons.forEach((btn) => {
   btn.addEventListener("click", appendNumber(btn));
 });
+operationButtons.forEach((btn) => {
+  btn.addEventListener("click", chooseOperation(btn));
+});
+equalButton.addEventListener("click", compute);

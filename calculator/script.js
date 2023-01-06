@@ -15,6 +15,19 @@ function del() {
 
 function appendNumber(btn) {
   btn.onclick = function () {
+    if (
+      btn.innerText === "." &&
+      (screen.innerText.includes("+") ||
+        screen.innerText.includes("×") ||
+        screen.innerText.includes("÷") ||
+        screen.innerText.includes("-"))
+    ) {
+      if (screen.innerText.split(".").length - 1 < 2) {
+        screen.innerText += btn.innerText;
+      } else {
+        return;
+      }
+    }
     if (btn.innerText === "." && screen.innerText.includes(".")) {
       return;
     } else {
@@ -39,10 +52,33 @@ function chooseOperation(btn) {
 }
 
 function compute() {
-  l_operand = screen.innerText;
+  let l_operand = parseFloat(screen.innerText);
+  let r_operand = parseFloat(
+    screen.innerText.replace(l_operand.toString(), "").slice(1)
+  );
+  let oper = screen.innerText.slice(
+    l_operand.toString().length,
+    l_operand.toString().length + 1
+  );
+  switch (oper.toString()) {
+    case "÷":
+      var res = l_operand / r_operand;
+      screen.innerText = res.toString();
+      break;
+    case "×":
+      var res = l_operand * r_operand;
+      screen.innerText = res.toString();
+      break;
+    case "+":
+      var res = l_operand + r_operand;
+      screen.innerText = res.toString();
+      break;
+    case "-":
+      var res = l_operand - r_operand;
+      screen.innerText = res.toString();
+      break;
+  }
 }
-
-function updateDisplay() {}
 
 clearButton.addEventListener("click", clear);
 deleteButton.addEventListener("click", del);

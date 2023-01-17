@@ -34,6 +34,41 @@ const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
 
-const prevBtn = document.getElementsByClassName("prev-btn");
-const nextBtn = document.getElementsByClassName("next-btn");
-const randomBtn = document.getElementsByClassName("random-btn");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.querySelector(".random-btn");
+
+let currentId = 0;
+
+nextBtn.addEventListener("click", () => {
+  currentId++;
+  if (currentId > reviews.length - 1) {
+    currentId = 0;
+  }
+  const item = reviews[currentId];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+});
+
+prevBtn.addEventListener("click", () => {
+  currentId--;
+  if (currentId < 0) {
+    currentId = reviews.length - 1;
+  }
+  const item = reviews[currentId];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+});
+
+randomBtn.addEventListener("click", () => {
+  currentId = Math.floor(Math.random() * reviews.length);
+  const item = reviews[currentId];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+});

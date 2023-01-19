@@ -1,0 +1,53 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: url("https://d1k571r5p7i4n1.cloudfront.net/c.2197/large/furniture_for_2020.jpg")
+    no-repeat;
+  background-size: cover;
+}
+
+.banner {
+  background: white;
+  padding: 3rem 4rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: capitalize;
+  font-size: 4rem;
+  letter-spacing: 0.25rem;
+  color: rgb(23, 43, 64);
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: rgb(42, 180, 255);
+  color: white;
+  padding: 0.4rem 0.7rem;
+  text-transform: uppercase;
+  border: 2px solid rgb(42, 180, 255);
+  border-radius: 0.5rem;
+  letter-spacing: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: transparent;
+  color: rgb(42, 180, 255);
+}

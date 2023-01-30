@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  color: rgb(16, 42, 66);
+}
+
+.underline {
+  width: 5rem;
+  height: 0.25rem;
+  background: rgb(197, 157, 95);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-container {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-btn {
+  background: transparent;
+  border-color: rgb(197, 157, 95);
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  color: rgb(197, 157, 95);
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.filter-btn:hover {
+  background: rgb(197, 157, 95);
+  color: white;
+}

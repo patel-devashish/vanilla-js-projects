@@ -13,6 +13,7 @@ main {
 
 section {
   padding: 5rem 0;
+  display: block;
 }
 
 .title {
@@ -60,7 +61,7 @@ h2 {
   color: white;
 }
 
-.menu-items {
+.menu-center {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
@@ -80,6 +81,7 @@ h2 {
   height: 200px;
   border: 0.25rem solid rgb(197, 157, 95);
   border-radius: 0.5rem;
+  width: 225px;
 }
 
 .item-info header {
@@ -116,7 +118,7 @@ p {
   }
 }
 @media screen and (min-width: 1200px) {
-  .section-center {
+  .menu-center {
     width: 95vw;
     grid-template-columns: 1fr 1fr;
   }

@@ -87,3 +87,7 @@ h1 {
   border-radius: 0.5rem;
   transition: 0.3s linear;
 }
+
+.slide .switch {
+  left: 50%;
+}
